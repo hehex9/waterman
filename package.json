@@ -1,6 +1,6 @@
 {
   "name": "waterman",
-  "version": "0.0.1-beta.0",
+  "version": "0.0.1-beta.1",
   "license": "MIT",
   "main": "./lib/waterman.js",
   "bin": "./bin/waterman",
@@ -15,6 +15,7 @@
   "description": "cli tool to add text watermark to images",
   "scripts": {
     "lint": "tsc --noEmit && eslint src",
+    "prepare": "npm run build",
     "build": "tsc"
   },
   "dependencies": {

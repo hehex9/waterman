@@ -3,7 +3,7 @@ import {watermark} from './waterman'
 
 export function run() {
   const command = argv
-    .usage('Usage: waterman <target> [options]')
+    .usage('Usage: waterman [options]')
     .option('file', {
       alias: 'f',
       type: 'string',
