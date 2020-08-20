@@ -1,0 +1,10 @@
+{
+  "extends": ["config:base"],
+  "schedule": ["every weekend"],
+  "packageRules": [
+    {
+      "packagePatterns": ["^@types/"],
+      "enabled": false
+    }
+  ]
+}
