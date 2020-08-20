@@ -3,7 +3,7 @@
 const {join} = require('path')
 const devMode = require('fs').existsSync(join(__dirname, '..', 'src'))
 
-if (!devMode) {
+if (devMode) {
   require('ts-node').register({project: join(__dirname, '..', 'tsconfig.json')})
   require('../src/bin').run()
 } else {

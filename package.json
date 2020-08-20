@@ -1,6 +1,6 @@
 {
   "name": "waterman",
-  "version": "0.0.1",
+  "version": "0.0.1-beta.0",
   "license": "MIT",
   "main": "./lib/waterman.js",
   "bin": "./bin/waterman",
@@ -8,6 +8,11 @@
     "bin",
     "lib"
   ],
+  "repository": "https://github.com/hehex9/waterman",
+  "keywords": [
+    "watermark"
+  ],
+  "description": "cli tool to add text watermark to images",
   "scripts": {
     "lint": "tsc --noEmit && eslint src",
     "build": "tsc"
