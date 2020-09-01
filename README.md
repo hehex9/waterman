@@ -4,7 +4,7 @@
 
 add text watermark to images
 
-## usage
+## Usage
 
 ```
 Usage: waterman [options]
