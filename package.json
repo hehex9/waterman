@@ -25,7 +25,7 @@
   "devDependencies": {
     "@types/node": "14.6.0",
     "@types/yargs": "15.0.5",
-    "@youjinbu/eslint-config": "0.2.0",
+    "@youjinbu/eslint-config": "0.4.1",
     "@youjinbu/prettier-config": "0.0.1",
     "eslint": "7.7.0",
     "prettier": "2.1.1",
