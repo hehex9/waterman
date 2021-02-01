@@ -12,6 +12,9 @@
   "keywords": [
     "watermark"
   ],
+  "engines": {
+    "node": ">=12"
+  },
   "description": "cli tool to add text watermark to images",
   "scripts": {
     "lint": "tsc --noEmit && eslint src",

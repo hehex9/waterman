@@ -6,14 +6,13 @@ export interface Options {
   file: string
   out: string
   text: string
+  verbose?: boolean
 }
 
 export async function generate(fileName: string, text: string, dir = '') {
   const split = fileName.split('.')
   const ext = split.pop()
   const name = split.join('.')
-
-  const rotate = (-25 * Math.PI) / 180
 
   const image = await loadImage(fileName)
   const {width, height} = image
@@ -22,9 +21,9 @@ export async function generate(fileName: string, text: string, dir = '') {
   const max = Math.max(height, width)
 
   ctx.drawImage(image, 0, 0)
-  ctx.font = `${max / 12}px Helvetica`
+  ctx.font = `${max / (text.length * 1.5)}px Helvetica`
   ctx.fillStyle = 'rgba(255,0,0,0.7)'
-  ctx.rotate(rotate)
+  ctx.rotate((-25 * Math.PI) / 180)
 
   if (width > height) {
     ctx.fillText(text, -width / 10, height)
@@ -33,8 +32,6 @@ export async function generate(fileName: string, text: string, dir = '') {
   }
 
   return new Promise((resolve) => {
-    console.log(fileName)
-
     canvas
       .createJPEGStream()
       .pipe(
@@ -51,14 +48,22 @@ export async function watermark(options: Options) {
     fs.mkdirSync(out)
   }
 
+  const files = []
   if (fs.statSync(file).isDirectory()) {
     const dir = fs.readdirSync(file)
     for (const f of dir) {
       if (f.endsWith('jpeg') || f.endsWith('jpg') || f.endsWith('png')) {
-        await generate(join(file, f), text, out)
+        files.push(join(file, f))
       }
     }
   } else {
-    await generate(file, text, out)
+    files.push(file)
+  }
+
+  for (const f of files) {
+    await generate(f, text, out)
+    if (options.verbose) {
+      console.log(f)
+    }
   }
 }

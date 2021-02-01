@@ -11,6 +11,7 @@ export function run() {
       demandOption: true,
     })
     .option('out', {alias: 'o', type: 'string', describe: 'out dir'})
+    .option('verbose', {type: 'boolean', describe: 'display verbose output'})
     .option('text', {
       alias: 't',
       type: 'string',
