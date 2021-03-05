@@ -22,7 +22,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "canvas": "2.6.1",
+    "canvas": "2.7.0",
     "yargs": "16.2.0"
   },
   "devDependencies": {
