@@ -1,8 +1,8 @@
 import argv from 'yargs'
-import {watermark} from './waterman'
+import {watermark} from './waterman.js'
 
 export function run() {
-  const command = argv
+  const command = argv(process.argv.slice(2))
     .usage('Usage: waterman [options]')
     .option('file', {
       alias: 'f',

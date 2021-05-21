@@ -1,6 +1,8 @@
 import fs from 'fs'
 import {join, basename} from 'path'
-import {createCanvas, loadImage} from 'canvas'
+import Canvas from 'canvas'
+
+const {createCanvas, loadImage} = Canvas
 
 export interface Options {
   file: string
